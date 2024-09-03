@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
-export default function LoginForm({username, setUsername, password, setPassword, setIsValid}) {
+export default function LoginForm({username, setUsername, password, setPassword}) {
 
+    const [isValid, setIsValid] = useState(false);
     const testUsername = "testusername";
     const testPassword = "mypassword"
 
@@ -9,11 +10,14 @@ export default function LoginForm({username, setUsername, password, setPassword,
       e.preventDefault();
       if (username === testUsername && password === testPassword) {
         setIsValid(true);
+        setUsername("")
+        setPassword("");
+        alert("Correct")
       } else {
         setIsValid(false);
+        alert("Incorrect")
       }
-      setUsername("")
-      setPassword("");
+      
     }
      
     const handleReset = () => {
@@ -32,10 +36,10 @@ export default function LoginForm({username, setUsername, password, setPassword,
             <label htmlFor="password">Password: </label>
             <input id="password" name="password" 
             value={password} onChange={(e) => setPassword(e.target.value)} 
-            type="text" placeholder="Insert Password" 
+            type="password" placeholder="Insert Password" 
             aria-label="password" required/>
             <input type="reset" value="Cancel" onClick={handleReset} aria-label="cancel-button"/>
-            <input type="submit" value="Submit" aria-label="submit-button" />
+            <input type="submit" value="Login" aria-label="login-button" />
           </form>
         </>
     )
