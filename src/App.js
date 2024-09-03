@@ -11,8 +11,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1>
-          Dynamic CSS Login Form
+        <h1 className="header-h1">
+          <span className="span">D</span>ynamic CSS Login Form
         </h1>
       </header>
       <LoginForm 

@@ -1,0 +1,75 @@
+.inputs {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.whiteSpaceInput {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #fbed87;
+}
+
+.correctInput {
+    margin-top: 3%;
+    background-color: lightgreen;
+}
+
+.wrongInput {
+    margin-top: 3%;
+    background-color: lightcoral;
+}
+
+.input-button {
+    width: 40%;
+    background-color: #ccc;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 2px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .input-button:hover {
+    background-color: #cccccc84;
+  }
+
+.labels {
+    display: block;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.form {
+    margin-top: 3%;
+    animation: slideInLeft 0.6s forwards;
+}
+
+  @keyframes slideInLeft {
+    0% {
+        transform: translateX(-900px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+  }
+
+@media screen and (max-width: 760px) {
+    .input-button {
+        display: block;
+        width: 80%;
+        margin: 5% auto;
+        padding: 5%;
+    }
+}
+

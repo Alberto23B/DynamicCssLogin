@@ -1,23 +1,24 @@
 import React, { useState } from "react";
+import "./LoginForm.css"
 
 export default function LoginForm({username, setUsername, password, setPassword}) {
 
     const [isValid, setIsValid] = useState(false);
+
     const testUsername = "testusername";
-    const testPassword = "mypassword"
+    const testPassword = "mypassword";
 
     const handleSubmit = (e) => {
       e.preventDefault();
       if (username === testUsername && password === testPassword) {
         setIsValid(true);
-        setUsername("")
-        setPassword("");
-        alert("Correct")
+        e.target.className = "correctInput"
       } else {
         setIsValid(false);
-        alert("Incorrect")
+        e.target.className = "wrongInput"
       }
-      
+      setUsername("")
+      setPassword("");
     }
      
     const handleReset = () => {
@@ -25,21 +26,42 @@ export default function LoginForm({username, setUsername, password, setPassword}
         setPassword("");
     }
 
+    const [detectWhiteSpace, setDetectWhiteSpace] = useState(false);
+    const handleChange = ({target}) => {
+        const regex = /\s+/;
+        if (target.name === "username") {
+            setUsername(target.value);
+        }
+        if (target.name === "password") {
+            setPassword(target.value);
+        } 
+        if (regex.test(target.value)) {
+            target.className="whiteSpaceInput";
+            setDetectWhiteSpace(true)
+        } else {
+            target.className="inputs"
+            setDetectWhiteSpace(false)
+        }
+    }
+
+
     return (
         <>
-          <form onSubmit={handleSubmit}>
-            <label htmlFor="username">Username: </label>
-            <input id="username" name="username"
-            value={username} onChange={(e) => setUsername(e.target.value)} 
+          <form className="form" onSubmit={handleSubmit}>
+            <label className="labels" htmlFor="username">Username: </label>
+            <input className="inputs" id="username" name="username"
+            value={username} onChange={handleChange} 
             type="text" placeholder="Insert Username" 
             aria-label="username" required/>
-            <label htmlFor="password">Password: </label>
-            <input id="password" name="password" 
-            value={password} onChange={(e) => setPassword(e.target.value)} 
+            <label label className="labels" htmlFor="password">Password: </label>
+            <input className="inputs" id="password" name="password" 
+            value={password} onChange={handleChange} 
             type="password" placeholder="Insert Password" 
             aria-label="password" required/>
-            <input type="reset" value="Cancel" onClick={handleReset} aria-label="cancel-button"/>
-            <input type="submit" value="Login" aria-label="login-button" />
+            {detectWhiteSpace && <p>No space allowed</p>}
+            <input className="input-button" type="reset" value="Cancel" onClick={handleReset} aria-label="cancel-button"/>
+            <input className="input-button" type="submit" value="Login" aria-label="login-button" />
+            <p>{detectWhiteSpace && "No space allowed"}</p>
           </form>
         </>
     )

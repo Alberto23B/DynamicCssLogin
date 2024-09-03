@@ -5,7 +5,10 @@
 .App-logo {
   display: inline-block;
   margin-right: 1rem;
-  height: 5vmin;
+  height: 20vmin;
+  position: relative;
+  right: -3rem;
+  z-index: 0;
   pointer-events: none;
 }
 
@@ -13,6 +16,15 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+.header-h1 {
+  position: relative;
+  z-index: 1;
+}
+
+.span {
+  color: black;
 }
 
 .App-header {
@@ -28,4 +40,22 @@
 
 .App-link {
   color: #61dafb;
+}
+
+@media screen and (max-width: 760px) {
+  .App-header {
+    background-image: url("./assets/logo.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .App-logo {
+    display: none;
+  }
+  .header-h1 {
+    background-color: #282c34;
+  }
+  .span {
+    color: white;
+  }
 }
