@@ -1,5 +1,6 @@
 .instructions {
     position: fixed;
+    overflow: hidden;
     top: 25%;
     left: 20%;
     width: 60%;
@@ -42,4 +43,5 @@
 
 .ul {
     line-height: 3rem;
+    overflow: scroll;
 }
