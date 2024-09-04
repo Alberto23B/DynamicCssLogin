@@ -22,6 +22,7 @@ function App() {
       <LoginForm 
       username={username} setUsername={setUsername}
       password={password} setPassword={setPassword}
+      instructionsDisplay={instructionsDisplay}
       />
     </div>
     </>

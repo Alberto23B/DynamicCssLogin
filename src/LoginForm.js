@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./LoginForm.css"
 
-export default function LoginForm({username, setUsername, password, setPassword}) {
+export default function LoginForm({username, setUsername, password, setPassword, instructionsDisplay}) {
 
     const [isValid, setIsValid] = useState(null);
     const [inputStyle, setInputStyle] = useState("inputs");
@@ -56,7 +56,7 @@ export default function LoginForm({username, setUsername, password, setPassword}
 
     return (
         <>
-          <form className="form" onSubmit={handleSubmit}>
+          <form className={instructionsDisplay === "hidden" ? "form" : "form form-inactive"} onSubmit={handleSubmit}>
             <label className="labels" htmlFor="username">Username: </label>
             <input className={inputStyle} id="username" name="username"
             value={username} onChange={handleChange} 

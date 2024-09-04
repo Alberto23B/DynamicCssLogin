@@ -45,6 +45,10 @@
     margin-top: 3%;
 }
 
+.form-inactive {
+    pointer-events: none;
+}
+
 @media screen and (max-width: 760px) {
     .input-button {
         display: block;
