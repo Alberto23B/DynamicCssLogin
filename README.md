@@ -27,7 +27,7 @@ This is a login form that dynamically changes its CSS based on user interactions
 
 ## Features
 - Validation of the inputs
-- Scalable design for different screen size
+- Responsive design for different screen size
 
 
 ## Project Status
