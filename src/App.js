@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import logo from './assets/logo.svg';
 import './App.css';
 import LoginForm from "./LoginForm";
+import InstructionTab from "./InstructionTab"
 
 function App() {
   const [username, setUsername] = useState("");
@@ -19,6 +20,7 @@ function App() {
       username={username} setUsername={setUsername}
       password={password} setPassword={setPassword}
       />
+      <InstructionTab />
     </div>
   );
 }

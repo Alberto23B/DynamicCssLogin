@@ -19,13 +19,25 @@
     background-color: #fbed87;
 }
 
-.correctInput {
-    margin-top: 3%;
+.correct-input {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
     background-color: lightgreen;
 }
 
-.wrongInput {
-    margin-top: 3%;
+.wrong-input {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
     background-color: lightcoral;
 }
 

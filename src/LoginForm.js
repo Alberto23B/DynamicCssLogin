@@ -1,28 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./LoginForm.css"
 
 export default function LoginForm({username, setUsername, password, setPassword}) {
 
-    const [isValid, setIsValid] = useState(false);
+    const [isValid, setIsValid] = useState(null);
 
     const testUsername = "testusername";
     const testPassword = "mypassword";
-
+    
+    const [inputStyle, setInputStyle] = useState("inputs");
+    
+    useEffect(() => {
+        if (isValid !== null) {
+          const newStyle = isValid ? "correct-input" : "wrong-input";
+          setInputStyle(newStyle);
+          const resetStyleTimeout = setTimeout(() => {
+              setInputStyle("inputs");
+          }, 500);
+          return () => clearTimeout(resetStyleTimeout);
+        }
+    }, [isValid]);
+    
     const handleSubmit = (e) => {
       e.preventDefault();
-      if (username === testUsername && password === testPassword) {
-        setIsValid(true);
-        e.target.className = "correctInput"
-      } else {
-        setIsValid(false);
-        e.target.className = "wrongInput"
-      }
-      setUsername("")
-      setPassword("");
+      setIsValid(null);
+      setTimeout(() => {
+          setIsValid(username === testUsername && password === testPassword);
+          setUsername("");
+          setPassword("");
+      }, 0);
     }
-     
+
+    
     const handleReset = () => {
-        setUsername("")
+        setInputStyle("inputs");
+        setUsername("");
         setPassword("");
     }
 
@@ -44,17 +56,16 @@ export default function LoginForm({username, setUsername, password, setPassword}
         }
     }
 
-
     return (
         <>
           <form className="form" onSubmit={handleSubmit}>
             <label className="labels" htmlFor="username">Username: </label>
-            <input className="inputs" id="username" name="username"
+            <input className={inputStyle} id="username" name="username"
             value={username} onChange={handleChange} 
             type="text" placeholder="Insert Username" 
             aria-label="username" required/>
-            <label label className="labels" htmlFor="password">Password: </label>
-            <input className="inputs" id="password" name="password" 
+            <label className="labels" htmlFor="password">Password: </label>
+            <input className={inputStyle} id="password" name="password" 
             value={password} onChange={handleChange} 
             type="password" placeholder="Insert Password" 
             aria-label="password" required/>
