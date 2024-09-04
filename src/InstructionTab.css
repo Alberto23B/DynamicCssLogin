@@ -43,5 +43,15 @@
 
 .ul {
     line-height: 3rem;
-    overflow: scroll;
+    padding: 0 7% 0 15%;
+    
 }
+
+@media screen and (max-width: 1180px) {
+    .ul {
+        line-height: 3rem;
+        padding: 0 7% 0 15%;
+        overflow: scroll;
+    }
+}
+

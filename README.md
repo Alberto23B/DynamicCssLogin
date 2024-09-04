@@ -7,7 +7,7 @@ This is a login form that dynamically changes its CSS based on user interactions
 * [Features](#features)
 * [Wireframes](#wireframes)
 * [Project Status](#project-status)
-* [On-going todo's and room for improvement](#On-going-todos-and-room-for-improvement)
+* [Room for improvement](#Room-for-improvement)
 * [Acknowledgements](#acknowledgements)
 * [Contact](#contact)
 
@@ -32,6 +32,11 @@ This is a login form that dynamically changes its CSS based on user interactions
 
 ## Project Status
 Project is: _completed_
+
+
+## Room for Improvement
+-Make the inputs and buttons unaccessible when the instruction tab is displayed
+
 
 ## Acknowledgements
 - This project was based on a project found at [this repo](https://github.com/florinpop17/app-ideas/tree/master/Projects).
