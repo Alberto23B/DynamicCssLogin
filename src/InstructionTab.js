@@ -4,7 +4,7 @@ import "./InstructionTab.css"
 export default function InstructionTab({instructionsDisplay, setInstructionsDisplay}) {
     return (
         <div className={instructionsDisplay}>
-            <h1>Functionalities</h1>
+            <h1 className="h1">Functionalities</h1>
             <ul className="ul">
                 <li>Submitting the test username and password will turn the inputs green, else red</li>
                 <li>(username: "testusername", password: "mypassword")</li>
