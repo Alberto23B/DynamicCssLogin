@@ -34,10 +34,6 @@ This is a login form that dynamically changes its CSS based on user interactions
 Project is: _completed_
 
 
-## Room for Improvement
--Make the inputs and buttons unaccessible when the instruction tab is displayed
-
-
 ## Acknowledgements
 - This project was based on a project found at [this repo](https://github.com/florinpop17/app-ideas/tree/master/Projects).
 - Huge thanks to @florinpop17 !
