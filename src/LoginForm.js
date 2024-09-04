@@ -70,7 +70,6 @@ export default function LoginForm({username, setUsername, password, setPassword}
             {detectWhiteSpace && <p>No space allowed</p>}
             <input className="input-button" type="reset" value="Cancel" onClick={handleReset} aria-label="cancel-button"/>
             <input className="input-button" type="submit" value="Login" aria-label="login-button" />
-            <p>{detectWhiteSpace && "No space allowed"}</p>
           </form>
         </>
     )
