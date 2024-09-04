@@ -7,8 +7,11 @@ import InstructionTab from "./InstructionTab"
 function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [instructionsDisplay, setInstructionsDisplay] = useState("instructions")
  
   return (
+    <>
+    <InstructionTab instructionsDisplay={instructionsDisplay} setInstructionsDisplay={setInstructionsDisplay}/>
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -20,8 +23,8 @@ function App() {
       username={username} setUsername={setUsername}
       password={password} setPassword={setPassword}
       />
-      <InstructionTab />
     </div>
+    </>
   );
 }
 

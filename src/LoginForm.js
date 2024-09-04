@@ -4,15 +4,13 @@ import "./LoginForm.css"
 export default function LoginForm({username, setUsername, password, setPassword}) {
 
     const [isValid, setIsValid] = useState(null);
-
+    const [inputStyle, setInputStyle] = useState("inputs");
     const testUsername = "testusername";
     const testPassword = "mypassword";
     
-    const [inputStyle, setInputStyle] = useState("inputs");
-    
     useEffect(() => {
         if (isValid !== null) {
-          const newStyle = isValid ? "correct-input" : "wrong-input";
+          const newStyle = isValid ? "inputs correct-input" : "inputs wrong-input";
           setInputStyle(newStyle);
           const resetStyleTimeout = setTimeout(() => {
               setInputStyle("inputs");
@@ -48,7 +46,7 @@ export default function LoginForm({username, setUsername, password, setPassword}
             setPassword(target.value);
         } 
         if (regex.test(target.value)) {
-            target.className="whiteSpaceInput";
+            target.className="inputs whitespace-input";
             setDetectWhiteSpace(true)
         } else {
             target.className="inputs"
